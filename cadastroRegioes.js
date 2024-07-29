@@ -1,7 +1,6 @@
 const prompt = require("prompt-sync")();
-const nomeInvalido = (nome) => nome == "";
-const indiceInvalido = (indice) =>
-  indice < 0 || indice >= pais.length || isNaN(indice);
+const nomeInvalido = (nome) => nome.trim() == "";
+const indiceInvalido = (indice) => indice < 0 || indice >= pais.length || isNaN(indice);
 const pais = [];
 //-----------------------------------------------------------------------
 const regiao = () => {
@@ -64,10 +63,10 @@ const procurar = () => {
   let achou = prompt("Digite a cidade da região que deseja encontrar: ");
   let cidadeEncontrada = false;
   pais.forEach((rega, indice) => {
-    if (rega.cidade === achou) {
+    if (rega.cidade.toLowerCase() === achou.toLowerCase()) {
       cidadeEncontrada = true;
       console.log("Informações sobre a região:");
-      console.log("Número da região: " + (indice + 1));
+      console.log("Número da região: " + (i + 1));
       console.log("Nome da cidade: " + rega.cidade);
       console.log("Nome do estado: " + rega.estado);
       console.log("Nome da região: " + rega.regiao);
@@ -129,7 +128,7 @@ const remover = () => {
   let achou = prompt("Digite a cidade da região que deseja encontrar: ");
   let cidadeEncontrada = false;
   pais.forEach((rega, indice) => {
-    if (rega.cidade === achou) {
+    if (rega.cidade.toLowerCase() === achou.toLowerCase()) {
       cidadeEncontrada = true;
       pais.splice(indice, 1);
       console.log(

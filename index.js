@@ -1,5 +1,11 @@
 const prompt = require("prompt-sync")();
-const { criar, atualizar, procurar, remover, listagem } = require("./cadastroRegioes.js");
+const {
+  criar,
+  atualizar,
+  procurar,
+  remover,
+  listagem,
+} = require("./cadastroRegioes.js");
 
 while (true) {
   console.log(`
@@ -15,25 +21,25 @@ while (true) {
 
   switch (opcao) {
     case "1":
-        criar()
+      criar();
       break;
     case "2":
-        listagem()
+      listagem();
       break;
     case "3":
-        procurar()
+      procurar();
       break;
     case "4":
-        atualizar()
+      atualizar();
       break;
     case "5":
-        remover()
+      remover();
       break;
     case "0":
-        process.exit()
+      process.exit();
       break;
     default:
-        console.log("Opção inválida")
+      console.log("Opção inválida");
       break;
   }
 }
